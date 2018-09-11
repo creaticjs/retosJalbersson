@@ -1,0 +1,3 @@
+[submodule "AhorcadoJal"]
+	path = AhorcadoJal
+	url = https://github.com/creaticjs/AhorcadoJal.git
