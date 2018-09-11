@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>FPC</title>
+</head>
+<body>
+    <h1 id="titulo">Futbol Profesional Colombiano....        Horriiiiiiiiiible oye!!!</h1>
+    <div id="contenedorCompleto">
+    <div id="zonaIzquierda">
+        <select id="equipos" onchange="actualizarDatos()">
+            <option value="Nacional">Nacional</option>
+            <option value="América">America</option>
+            <option value="Millonarios">Millonarios</option>
+            <option value="Tolima">Tolima</option>
+            <option value="Equidad">Equidad</option>
+            <option value="Once Caldas">Once Caldas</option>
+            <option value="Junior">Junior</option>
+            <option value="Aguilas Pereira">Aguilas Pereira</option>
+            <option value="Medellin">Medellin</option>
+            <option value="Deportivo Cali">Deportivo Cali</option>
+            <option value="Alianza Petrolera">Alianza Petrolera</option>
+            <option value="Santa Fe">Santa Fe</option>
+            <option value="Patriotas">Patriotas</option>
+            <option value="Boyaca Chico">Boyaca Chico</option>
+            <option value="Bucaramanga">Bucaramanga</option>
+            <option value="Jaguares">Jaguares</option>
+            <option value="Pasto">Pasto</option>
+            <option value="Envigado">Envigado</option>
+            <option value="Atletico Huila">Atletico Huila</option>
+            <option value="Leones">Leones</option>
+            <option value="Universitario de Popayan">Universitario de Popayan</option>
+            <option value="Cucuta">Cucuta</option>
+            <option value="Union Magdalena">Union Magdalena</option>
+            <option value="Deportivo Pereira">Deportivo Pereira</option>
+            <option value="Real Cartagena">Real Cartagena</option>
+            <option value="Valledupar">Valledupar</option>
+        </select>
+        <div id="divImagen">
+            <h2 id="nombreEquipo">Nani?!!</h2>
+            <img id="imgEquipo" src="res/pregunta.png"/>
+        </div>
+        <div id="informacionEquipos">
+            <label id="lblNombre" class="lblDatos">Nombre:</label><br/>
+            <label id="lblDT" class="lblDatos">Director Técnico:</label><br/>
+            <label id="lblJugadores" class="lblDatos">Jugadores:</label><br/>
+            <label id="lblResenia" class="lblDatos">Reseña:</label><br/>
+            <div id="estrellas">
+                <label id="lblEstrellas" class="lblDatos">Estrellas:</label>
+            </div>
+            
+        </div>
+    </div>
+    <div id="zonaTablaPosociones">
+        <div id="zonaBotones">
+            <button id="btnAsc" onclick="mostrarTablaAsc()">Mostrar tabla en orden ascendente(posición)</button>
+            <button id="btnDesc" onclick="mostrarTablaDesc()">Mostrar tabla en orden descendente(posición)</button>
+            <button id="btnCategoriaA" onclick="mostrarTablaCatA()">Mostrar equipos Categoria A</button>
+            <button id="btnCategoriaB" onclick="mostrarTablaCatB()">Mostrar equipos Categoria B</button>
+        </div>
+        <div id="zonaTabla">
+            <table id="tablaEquipo" class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Equipo</th>
+                    <th scope="col">Partidos Jugados</th>
+                    <th scope="col">Ganados</th>
+                    <th scope="col">Empatados</th>
+                    <th scope="col">Perdidos</th>
+                    <th scope="col">Goles a favor</th>
+                    <th scope="col">Goles en contra</th>
+                    <th scope="col">Puntos</th>
+                  </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                 
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
