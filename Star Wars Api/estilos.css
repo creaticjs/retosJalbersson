@@ -1,0 +1,60 @@
+#logoMenu
+{
+    height: 100px;
+    width: 170px;
+}
+
+body
+{
+    background-image: url("res/fondo.png");
+}
+
+#container
+{
+    width: 1000px;
+    background: black;
+    margin: auto;
+}
+
+#main
+{
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu
+{
+    float: right;
+}
+
+.menu li
+{
+    display: inline-block;
+}
+
+.menu a
+{
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.menu a:hover
+{
+    background: #bbbb00;
+}
+
+#texto
+{
+    color: white;
+}
+
+.mySlides 
+{
+    display:none;
+    height: 300px;
+    width: 100%;
+}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
