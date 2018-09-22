@@ -8,6 +8,7 @@ if(window.location.pathname == "/index.html");
 
 
 var personajes;
+var personaje;
 var planetas;
 var peliculas;
 var naves;
@@ -30,6 +31,34 @@ function getPersonajes()
     };
     xhttp.open("GET", "https://swapi.co/api/people/", true);
     xhttp.send();
+}
+
+function getDetallesPersonaje() 
+{
+    var detallePromise = new Promise(function(resolve, reject)
+    {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() 
+        {
+            if (this.readyState == 4 && this.status == 200) 
+            {
+                resolve(JSON.parse(this.responseText));
+            }
+        };
+        xhttp.onerror= function(){
+            reject(Error("hubo un error"));
+        }
+        xhttp.open("GET", "https://swapi.co/api/people/1", true);
+        xhttp.send();
+    });
+    detallePromise.then(function(data)
+    {
+        alert(data.name);
+    });
+    detallePromise.catch(function()
+    {
+        alert("No se pudoooo!!!!!");
+    });
 }
 
 function getPlanetas() 
@@ -145,20 +174,28 @@ function generarTarjetasPersonajes(size)
             var divFila = document.createElement("DIV");
             divFila.style = "background: #333333; margin: 5px";
             var divPersonaje = document.createElement("DIV");
+            var btnPersonaje = document.createElement("BUTTON");
+            btnPersonaje.innerText = "Detalles"
+            btnPersonaje.onclick = getDetallesPersonaje;
             divPersonaje.style = "margin: 15px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; padding: 5px; text-align: center"
             divPersonaje.appendChild(imgPersonaje);
             divPersonaje.appendChild(lblNombreP);
             divPersonaje.appendChild(lblHeigthP);
+            divPersonaje.appendChild(btnPersonaje);
             divFila.appendChild(divPersonaje);
             contenedorTarjetas.appendChild(divFila);   
         }
         else
         {
             var divPersonaje = document.createElement("DIV");
+            var btnPersonaje = document.createElement("BUTTON");
+            btnPersonaje.innerText = "Detalles"
+            btnPersonaje.onclick = getDetallesPersonaje;
             divPersonaje.style = "margin: 15px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; padding: 5px; text-align: center"
             divPersonaje.appendChild(imgPersonaje);
             divPersonaje.appendChild(lblNombreP);
             divPersonaje.appendChild(lblHeigthP);
+            divPersonaje.appendChild(btnPersonaje);
             divFila.appendChild(divPersonaje);
         }
     }
