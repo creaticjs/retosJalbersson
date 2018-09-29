@@ -45,7 +45,8 @@ function getDetallesPersonaje()
                 resolve(JSON.parse(this.responseText));
             }
         };
-        xhttp.onerror= function(){
+        xhttp.onerror= function()
+        {
             reject(Error("hubo un error"));
         }
         xhttp.open("GET", "https://swapi.co/api/people/1", true);
@@ -53,7 +54,14 @@ function getDetallesPersonaje()
     });
     detallePromise.then(function(data)
     {
-        alert(data.name);
+        var parrafo = document.getElementById("pDetalles");
+        var modal = document.getElementById("myModal");
+        modal.style = "text-align: center";
+        parrafo.innerText = data.name+ "\n"
+        +data.height+ "\n"+data.hair_color+ "\n"+data.skin_color+ "\n"+data.eye_color
+        + "\n"+data.birth_year+ "\n"+data.gender;
+        modal.style.display = "block";
+        
     });
     detallePromise.catch(function()
     {
@@ -223,20 +231,28 @@ function generarTarjetasPlanetas(size)
             var divFila = document.createElement("DIV");
             divFila.style = "background: #333333; margin: 5px";
             var divPersonaje = document.createElement("DIV");
+            var btnPersonaje = document.createElement("BUTTON");
+            btnPersonaje.innerText = "Detalles"
+            btnPersonaje.onclick = getDetallesPersonaje;
             divPersonaje.style = "margin: 15px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; padding: 5px; text-align: center"
             divPersonaje.appendChild(imgPlaneta);
             divPersonaje.appendChild(lblNombreP);
             divPersonaje.appendChild(lblHeigthP);
+            divPersonaje.appendChild(btnPersonaje);
             divFila.appendChild(divPersonaje);
             contenedorTarjetas.appendChild(divFila);   
         }
         else
         {
             var divPersonaje = document.createElement("DIV");
+            var btnPersonaje = document.createElement("BUTTON");
+            btnPersonaje.innerText = "Detalles"
+            btnPersonaje.onclick = getDetallesPersonaje;
             divPersonaje.style = "margin: 15px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; padding: 5px; text-align: center"
             divPersonaje.appendChild(imgPlaneta);
             divPersonaje.appendChild(lblNombreP);
             divPersonaje.appendChild(lblHeigthP);
+            divPersonaje.appendChild(btnPersonaje);
             divFila.appendChild(divPersonaje);
         }
     }
@@ -263,20 +279,28 @@ function generarTarjetasPeliculas(size)
             var divFila = document.createElement("DIV");
             divFila.style = "background: #333333; margin: 5px";
             var divPersonaje = document.createElement("DIV");
+            var btnPersonaje = document.createElement("BUTTON");
+            btnPersonaje.innerText = "Detalles"
+            btnPersonaje.onclick = getDetallesPersonaje;
             divPersonaje.style = "margin: 15px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; padding: 5px; text-align: center"
             divPersonaje.appendChild(imgPersonaje);
             divPersonaje.appendChild(lblNombreP);
             divPersonaje.appendChild(lblHeigthP);
+            divPersonaje.appendChild(btnPersonaje);
             divFila.appendChild(divPersonaje);
             contenedorTarjetas.appendChild(divFila);   
         }
         else
         {
             var divPersonaje = document.createElement("DIV");
+            var btnPersonaje = document.createElement("BUTTON");
+            btnPersonaje.innerText = "Detalles"
+            btnPersonaje.onclick = getDetallesPersonaje;
             divPersonaje.style = "margin: 15px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; padding: 5px; text-align: center"
             divPersonaje.appendChild(imgPersonaje);
             divPersonaje.appendChild(lblNombreP);
             divPersonaje.appendChild(lblHeigthP);
+            divPersonaje.appendChild(btnPersonaje);
             divFila.appendChild(divPersonaje);
         }
     }
@@ -303,20 +327,28 @@ function generarTarjetasNaves(size)
             var divFila = document.createElement("DIV");
             divFila.style = "background: #333333; margin: 5px";
             var divPersonaje = document.createElement("DIV");
+            var btnPersonaje = document.createElement("BUTTON");
+            btnPersonaje.innerText = "Detalles"
+            btnPersonaje.onclick = getDetallesPersonaje;
             divPersonaje.style = "margin: 15px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; padding: 5px; text-align: center"
             divPersonaje.appendChild(imgPersonaje);
             divPersonaje.appendChild(lblNombreP);
             divPersonaje.appendChild(lblHeigthP);
+            divPersonaje.appendChild(btnPersonaje);
             divFila.appendChild(divPersonaje);
             contenedorTarjetas.appendChild(divFila);   
         }
         else
         {
             var divPersonaje = document.createElement("DIV");
+            var btnPersonaje = document.createElement("BUTTON");
+            btnPersonaje.innerText = "Detalles"
+            btnPersonaje.onclick = getDetallesPersonaje;
             divPersonaje.style = "margin: 15px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; padding: 5px; text-align: center"
             divPersonaje.appendChild(imgPersonaje);
             divPersonaje.appendChild(lblNombreP);
             divPersonaje.appendChild(lblHeigthP);
+            divPersonaje.appendChild(btnPersonaje);
             divFila.appendChild(divPersonaje);
         }
     }
@@ -360,3 +392,21 @@ function carousel()
     x[myIndex-1].style.display = "block";  
     setTimeout(carousel, 3000); // Change image every 2 seconds
 }
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+} 
