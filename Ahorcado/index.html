@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script> 
+    <title>Ahorcado</title>
+</head>
+<body>
+    <div id="mainContent">
+        <div id="hangImage">
+                <img id="changeImage" src="res/1.png">
+        </div>
+        <div id="buttons">
+            <button class="letterButton" onclick="reloadQText('a')">a</button>
+            <button class="letterButton" onclick="reloadQText('b')">b</button>
+            <button class="letterButton" onclick="reloadQText('c')">c</button>
+            <button class="letterButton" onclick="reloadQText('d')">d</button>
+            <button class="letterButton" onclick="reloadQText('e')">e</button>
+            <button class="letterButton" onclick="reloadQText('f')">f</button>
+            <button class="letterButton" onclick="reloadQText('g')">g</button>
+            <button class="letterButton" onclick="reloadQText('h')">h</button>
+            <button class="letterButton" onclick="reloadQText('i')">i</button>
+            <button class="letterButton" onclick="reloadQText('j')">j</button>
+            <button class="letterButton" onclick="reloadQText('k')">k</button>
+            <button class="letterButton" onclick="reloadQText('l')">l</button>
+            <button class="letterButton" onclick="reloadQText('m')">m</button>
+            <button class="letterButton" onclick="reloadQText('n')">n</button>
+            <button class="letterButton" onclick="reloadQText('o')">o</button>
+            <button class="letterButton" onclick="reloadQText('p')">p</button>
+            <button class="letterButton" onclick="reloadQText('q')">q</button>
+            <button class="letterButton" onclick="reloadQText('r')">r</button>
+            <button class="letterButton" onclick="reloadQText('s')">s</button>
+            <button class="letterButton" onclick="reloadQText('t')">t</button>
+            <button class="letterButton" onclick="reloadQText('u')">u</button>
+            <button class="letterButton" onclick="reloadQText('v')">v</button>
+            <button class="letterButton" onclick="reloadQText('w')">w</button>
+            <button class="letterButton" onclick="reloadQText('x')">x</button>
+            <button class="letterButton" onclick="reloadQText('y')">y</button>
+            <button class="letterButton" onclick="reloadQText('z')">z</button>
+        </div>
+        <p id="wrongPicks">Wrong picks: 0</p>
+        
+    </div>
+    <div id="controls">
+        <h1 id="qString"></h1>
+        <button id="loadButton" onclick="reloadQText('')">Load new word</button>
+    </div>
+
+</body>
+</html>
